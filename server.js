@@ -33,10 +33,10 @@ mongoose.connection.once('open', () => {
 
 
 //CONTROLLER
-const petsController = require('./controllers.pets.js')
+const petsController = require('./controllers/pets.js')
 app.use('/pets', petsController);
 
 //LISTENER
 app.listen(port, () => {
     console.log(`listening on port ${port}`)
-})
+});

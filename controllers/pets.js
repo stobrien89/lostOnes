@@ -6,22 +6,22 @@ const router = express.Router();
 
 //Index Route
 router.get('/', (req, res) => {
-    res.send('Index');
+    res.render('Index');
 });
 
 //New Route
 router.get('/new', (req, res) => {
-    res.send('New');
+    res.render('New');
 });
 
 //Show Route
 router.get('/:id', (req, res) => {
-    res.send('Show');
+    res.render('Show');
 });
 
 //Edit Route
 router.get('/:id/edit', (req, res) => {
-    res.send('Edit')
+    res.render('Edit')
 })
 
 
