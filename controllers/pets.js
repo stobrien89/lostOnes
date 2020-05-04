@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
-// Link to DB const Pets =
+
+// Link to DB const Pets 
+const Pets = require('../models/pets');
 
 ///PRESENTATIONAL ROUTES
 
