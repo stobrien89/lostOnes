@@ -34,7 +34,9 @@ router.get('/pets/:id', (req, res) => {
 
 //Edit Route
 router.get('/pets/:id/edit', (req, res) => {
-    res.render('Edit')
+    Pets.findById(req.params.id, (err, pet) => {
+        res.render('Edit', {pet})
+    })
 })
 
 
@@ -55,6 +57,23 @@ router.post('/pets', (req, res) => {
         err ? console.log(err) : console.log(createdPet);
         res.redirect('/lostones/pets');
         
+    })
+})
+
+///Update Pets Route
+router.put('/pets/:id', (req, res) => {
+    let {spayedOrNeutered, house_trained, special_needs, shots_current, children, dogs, cats} = req.body;
+    spayedOrNeutered === 'yes' ? spayedOrNeutered = true : spayedOrNeutered = false;
+    house_trained === 'yes' ? house_trained = true : house_trained = false;
+    special_needs === 'yes' ? special_needs = true : special_needs = false;
+    shots_current === 'yes' ? shots_current = true : shots_current = false;
+    children === 'yes' ? children = true : children = false;
+    dogs === 'yes' ? dogs = true : dogs = false;
+    cats === 'yes' ? cats = true : cats = false;
+    
+    Pets.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedPet) => {
+        err ? console.log(err) : console.log(updatedPet);
+        res.redirect(`/lostones/pets/${req.params.id}`)
     })
 })
 

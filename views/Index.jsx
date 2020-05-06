@@ -7,16 +7,32 @@ class Index extends React.Component {
         const {pets} = this.props;
         const elements = pets.map((pet, index) => {
             return (
-                <h2><a href={`http://localhost:3000/lostones/pets/${pet._id}`}>{pet.name}</a></h2>
-                
+                <div className="cell medium-4">
+                    <div className="callout" data-equalizer-watch>
+                        <p><img src={pet.photos} alt="Picture of pet" className="thumbnail"/></p>
+                        <p className="lead">{pet.name}</p>
+                        <p className="subheader">Age: {pet.description} years</p>
+                        <p className="subheader">Age: {pet.age} years old</p>
+                        <a className="button primary" href={`http://localhost:3000/lostones/pets/${pet._id}`}>More Info</a>
+                    </div>
+                </div>
             )
         })
 
 
         return (
             <Default>
-                <h1>Index heading</h1>
-                {elements}
+                <div className="callout large primary" data-equalizer>
+                    <div className="text-center">
+                        <h1>Featured pets</h1>
+                        <h2 className="subheader">blah blah blah</h2>
+                    </div>
+                </div>
+                <article className="grid-container">
+                    <div className="grid-x grid-margin-x small-up-1 medium-up-2 large-up-3">
+                        {elements}
+                    </div>
+                </article>
             </Default>
 
         )

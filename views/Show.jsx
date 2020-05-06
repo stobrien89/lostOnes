@@ -6,10 +6,43 @@ class Show extends React.Component {
 
         const {pet} = this.props;
 
+        // const attributes = Object.entries(pet).map((valArr, index, arr) => {
+        //     if (typeof valArr[1] === Boolean) {
+        //         return (
+
+        //         )
+        //     }
+        // })
+
         return (
             <Default>
-                <h1>Show Heading</h1>
-                <form action={`/lostones/pets/${pet.id}?_method=DELETE`} method="POST"><input type="submit" value="Delete"/></form>
+                
+            
+
+                <div className="grid-container">
+                    <div className="grid-x align-center grid-padding-x">
+                        <div className="cell medium-8">
+                            <div className="grid-x grid-padding-x align-center">
+                                <h4>{pet.name}</h4>
+                            </div>
+                            <img src={pet.photos} alt="picture of pet" className="thumbnail"/>
+                            <div className="grid-x grid-padding-x align-center">
+                                <div className="large-6 medium-4 cell">
+                                    <h6>Bio:</h6>
+                                        <p className="subheader">{pet.description}</p>
+                                </div>
+                            </div>   
+                            <div className="grid-x grid-padding-x align-center">
+                                <div className="large-2 medium-2 cell">
+                                    <form action={`/lostones/pets/${pet._id}?_method=DELETE`} method="POST"><input className="button primary" type="submit" value="Delete"/></form>
+                                </div>
+                                <div className="large-2 medium-2 cell">
+                                    <form action={`/lostones/pets/${pet._id}/edit`}><input type="submit" className="button primary" value="Update"/></form>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
             </Default>
 
         )

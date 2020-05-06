@@ -1,0 +1,11 @@
+ .primary {
+    background-color: rgb(33, 185, 155) !important;
+}
+
+.top-bar, .top-bar ul {
+    background-color: #fefefe !important;
+}
+
+.button.primary {
+    background-color: rgb(138, 64, 151) !important;
+}
