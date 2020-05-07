@@ -8,7 +8,7 @@ class Default extends React.Component {
             <html class="no-js" lang="en">
             <head>
                 <meta charSet="UTF-8"/>
-                <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+                <meta httpEquiv="x-ua-compatible" content="ie=edge"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
                 <title>LostOnes</title>
@@ -33,12 +33,14 @@ class Default extends React.Component {
                 </nav>
             </header>
                 {this.props.children}
-            <footer className="callout large primary">
+            <footer className="callout large primary footer">
                 <nav></nav>
             </footer>
             <script src="/js/vendor/jquery.js"></script>
             <script src="/js/vendor/what-input.js"></script>
             <script src="/js/vendor/foundation.min.js"></script>
+            <script src="js/foundation/foundation.orbit.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/plugins/foundation.equalizer.min.js"></script>
             <script>
                 $(document).foundation();
             </script>

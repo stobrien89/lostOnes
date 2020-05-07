@@ -32,9 +32,12 @@ mongoose.connection.once('open', () => {
 //   });
 
 
-//CONTROLLER
+//CONTROLLERS
 const petsController = require('./controllers/pets.js')
 app.use('/lostones', petsController);
+
+const UserController = require('./controllers/users.js')
+app.use('/lostones', UserController);
 
 //LISTENER
 app.listen(port, () => {

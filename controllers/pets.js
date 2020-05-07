@@ -15,27 +15,27 @@ router.get('/', (req, res) => {
 router.get('/pets', (req, res) => {
     Pets.find({}, (err, allPets) => {
         err ? console.log(err) : console.log(allPets)
-        res.render('Index', {pets: allPets});
+        res.render('PetIndex', {pets: allPets});
     })
 });
 
 //New Route
 router.get('/pets/new', (req, res) => {
-    res.render('New');
+    res.render('NewPet');
 });
 
 //Show Route
 router.get('/pets/:id', (req, res) => {
     Pets.findById(req.params.id, (err, foundPet) => {
         err ? console.log(err) : console.log(foundPet);
-        res.render('Show', {pet: foundPet})
+        res.render('PetShow', {pet: foundPet})
     })
 });
 
 //Edit Route
 router.get('/pets/:id/edit', (req, res) => {
     Pets.findById(req.params.id, (err, pet) => {
-        res.render('Edit', {pet})
+        res.render('PetEdit', {pet})
     })
 })
 

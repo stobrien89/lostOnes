@@ -6,8 +6,53 @@ class Home extends React.Component {
 
         return(
             <Default>
-             <h1>landing page heading</h1>
-
+                    <div className="callout large primary">
+                        <div className="text-center">
+                            <h1>Featured pets</h1>
+                            <h2 className="subheader">blah blah blah</h2>
+                        </div>
+                    </div>
+                    <div className="grid-container">
+                    <div className="orbit" role="region" aria-label="Sample pet images" data-orbit data-resize="lv5p5y-orbit" id="lv5p5y-orbit" data-e="eabujr-e" data-events="resize">
+                        <div className="orbit-wrapper">
+                            <div className="orbit-controls">
+                                <button className="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+                                <button className="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+                            </div>
+                            <ul className="orbit-container">
+                                <li className="is-active orbit-slide">
+                                    <figure className="orbit-figure">
+                                    <img className="orbit-image" src="/assets/orbit1.jpg" alt="Space"/>
+                                    </figure>
+                                </li>
+                                <li className="orbit-slide">
+                                    <figure className="orbit-figure">
+                                    <img className="orbit-image" src="/assets/orbit4.jpg" alt="Space"/>
+                                </figure>
+                                </li>
+                                <li className="orbit-slide">
+                                    <figure className="orbit-figure">
+                                    <img className="orbit-image" src="/assets/orbit3.jpg" alt="Space"/>
+                                    </figure>
+                                </li>
+                                <li className="orbit-slide">
+                                    <figure className="orbit-figure">
+                                    <img className="orbit-image" src="/assets/orbit2.jpg" alt="Space"/>
+                                    </figure>
+                                </li>
+                            </ul>
+                        </div>
+                        <nav class="orbit-bullets">
+                            <button class="is-active" data-slide="0">
+                            <span class="show-for-sr">Adopt a Dog</span>
+                            <span class="show-for-sr" data-slide-active-label>Current Slide</span>
+                            </button>
+                            <button data-slide="1"><span class="show-for-sr">Adopt a Cat.</span></button>
+                            <button data-slide="2"><span class="show-for-sr">So Funny.</span></button>
+                            <button data-slide="3"><span class="show-for-sr">Cats are better.</span></button>
+                        </nav>
+                        </div>
+                    </div>
             </Default>
         )
     }

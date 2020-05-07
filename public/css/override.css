@@ -1,4 +1,8 @@
- .primary {
+/* * {
+    border: 1px solid black;
+} */
+
+.primary {
     background-color: rgb(33, 185, 155) !important;
 }
 
@@ -9,3 +13,4 @@
 .button.primary {
     background-color: rgb(138, 64, 151) !important;
 }
+

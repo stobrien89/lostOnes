@@ -11,7 +11,7 @@ class Index extends React.Component {
                     <div className="callout" data-equalizer-watch>
                         <p><img src={pet.photos} alt="Picture of pet" className="thumbnail"/></p>
                         <p className="lead">{pet.name}</p>
-                        <p className="subheader">Age: {pet.description} years</p>
+                        <p className="subheader">About: {pet.description}</p>
                         <p className="subheader">Age: {pet.age} years old</p>
                         <a className="button primary" href={`http://localhost:3000/lostones/pets/${pet._id}`}>More Info</a>
                     </div>
@@ -22,14 +22,14 @@ class Index extends React.Component {
 
         return (
             <Default>
-                <div className="callout large primary" data-equalizer>
+                <div className="callout large primary">
                     <div className="text-center">
                         <h1>Featured pets</h1>
                         <h2 className="subheader">blah blah blah</h2>
                     </div>
                 </div>
-                <article className="grid-container">
-                    <div className="grid-x grid-margin-x small-up-1 medium-up-2 large-up-3">
+                <article className="grid-container" data-equalizer>
+                    <div className="grid-x grid-margin-x grid-margin-y small-up-1 medium-up-2 large-up-3">
                         {elements}
                     </div>
                 </article>
