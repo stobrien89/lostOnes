@@ -33,7 +33,8 @@ router.get('/logout' , (req, res) => {
 
 router.post('/login', passport.authenticate('local-login', {
     successRedirect: '/lostones',
-    failureRedirect: '/lostones/login'
+    failureRedirect: '/lostones/login',
+    
 }))
 
 // router.post('/register', (req, res) => {

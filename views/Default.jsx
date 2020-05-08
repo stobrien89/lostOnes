@@ -33,18 +33,33 @@ class Default extends React.Component {
                         </nav>
                     </header>
                         {this.props.children}
-                    <footer className="callout large primary footer">
+                    <footer className="callout large primary footer" style={{height: 20 + '%'}}>
                         <div className="grid-container">
-                            <div className="grid-x">
-                                <div className="cell medium-4">
-                                    <h5>LostOnes</h5>
-                                    <p>We do put stuff</p>    
+                            <div className="grid-x grid-padding-x">
+                                <div className="cell medium-4 text-center">
+                                    <h4>LostOnes</h4>
+                                    <hr/>
+                                    <p>We try to make pet adoption an easy process. buzzword buzzword buzzword. branding. buzzword.</p>    
                                 </div>                        
-                                <nav className="cell medium-4">
-                                    <h5>Links</h5>
+                                <nav className="cell medium-4 text-center">
+                                    <h4>Links</h4>
+                                    <ul className="vertical menu">
+                                        <li><a className="footer-link" href="/lostones/pets">Pets</a></li>
+                                        <li><a className="footer-link" href="#">Events</a></li> 
+                                        <li><a className="footer-link" href="#">About Us</a></li> 
+                                        <li><a className="footer-link" href="/lostones/login">Log In</a></li> 
+                                        <li><a className="footer-link" href="/lostones/register">Sign Up</a></li>
+                                    </ul>
                                 </nav>
-                                <nav className="cell medium-4">
-                                    <h5>Contact</h5>
+                                <nav className="cell medium-4 text-center">
+                                    <h4>Contact</h4>
+                                    <ul className="vertical menu">
+                                        <li><a className="footer-link" href="/lostones/pets">Pets</a></li>
+                                        <li><a className="footer-link" href="#">Events</a></li> 
+                                        <li><a className="footer-link" href="#">About Us</a></li> 
+                                        <li><a className="footer-link" href="/lostones/login">Log In</a></li> 
+                                        <li><a className="footer-link" href="/lostones/register">Sign Up</a></li>
+                                    </ul>
                                 </nav>
                             </div>
                         </div>
@@ -52,8 +67,6 @@ class Default extends React.Component {
                     <script src="/js/vendor/jquery.js"></script>
                     <script src="/js/vendor/what-input.js"></script>
                     <script src="/js/vendor/foundation.min.js"></script>
-                    <script src="js/foundation/foundation.orbit.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/plugins/foundation.equalizer.min.js"></script>
                     <script src="/js/app.js"></script>
                 </body>
             </html>

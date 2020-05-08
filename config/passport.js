@@ -1,3 +1,4 @@
+//Dependencies
 const passport = require('passport');
 const localStrategy = require('passport-local').Strategy;
 const User = require('../models/users');
@@ -28,7 +29,7 @@ passport.use('local-signup', new localStrategy({
 (req, email, password, done) => {
     User.findOne({email: email}, (err, user) => {
         if(err) return done(err)
-        if(user) return done(null, false, req.flash('signupMessage', 'Email is already taken. Please try again'))
+        if(user) return done(null, false, req.flash('signupMessage', 'Email is already taken. Please try again.'))
         const newUser = new User()
 
         newUser.email = email
@@ -48,8 +49,8 @@ passport.use('local-login', new localStrategy({
 }, (req, email, password, done) => {
 	User.findOne({email: email}, (err, user) => {
 		if(err) return done(err)
-		if(!user) return done(null, false, req.flash('loginMessage', 'No user found...'))
-		if(!bcrypt.compareSync(password, user.password)) return done(null, false, req.flash('loginMessage', 'Wrong Password.'))
+		if(!user) return done(null, false, req.flash('loginMessage', 'User not found. Please try again.'))
+		if(!bcrypt.compareSync(password, user.password)) return done(null, false, req.flash('loginMessage', 'Incorrect Password.'))
 		return done(null, user)
 	})
 }))

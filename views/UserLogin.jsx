@@ -3,7 +3,7 @@ const Default = require('./Default');
 
 class UserLogin extends React.Component {
     render() {
-        const {errorMessage} = this.props;
+        const {message} = this.props;
         
         return (
             <Default>
@@ -17,7 +17,7 @@ class UserLogin extends React.Component {
                     <form action="/lostones/login" method="POST">
                         <h1>Log In</h1>
                     
-                    <p id="login-status" className="invisible">{errorMessage}</p>
+                    {message ? <p data-alert className="alert-box alert radius" style={{color: 'rgb(138, 64, 151)'}}><strong>{message}</strong></p> : null}
                     
                     <label htmlFor="email">Email</label>
                     <input type="text" placeholder="Enter Email" name="email" required/>

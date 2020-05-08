@@ -17,3 +17,11 @@
 footer {
     color: white !important;
 }
+
+ul {
+    list-style: none;
+}
+
+.footer-link {
+    color: white;
+}

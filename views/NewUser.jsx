@@ -4,7 +4,7 @@ const Default = require('./Default');
 class NewUser extends React.Component {
     render() {
 
-        const {errorMessage} = this.props;
+        const {message} = this.props;
 
         return (
             <Default>
@@ -17,7 +17,7 @@ class NewUser extends React.Component {
                 <div className="grid-container">
                     <form action="/lostones/register" method="POST">
                         <h1>Register</h1>
-                    <p id="registration-status" className="invisible">{errorMessage}</p>
+                    {message ? <p data-alert className="alert-box alert radius" style={{color: 'rgb(138, 64, 151)'}}><strong>{message}</strong></p> : null}
                     <p>Please fill out the fields below to create a new account</p>
 
                     <label htmlFor="email">Email</label>

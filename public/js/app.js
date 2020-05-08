@@ -1,6 +1,7 @@
 
 
-$(document).foundation()
+$(document).foundation();
+
 
 $(() => {
     
@@ -10,7 +11,7 @@ $(() => {
     //Returns account creation message after redirect if email already exists
     $('#registration-status').text() !== '' ? $('#registration-status').toggleClass("invisible") : null;
 
-    
+
 
     
 })

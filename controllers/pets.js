@@ -8,7 +8,8 @@ const Pets = require('../models/pets');
 
 //Landing page
 router.get('/', (req, res) => {
-    res.render('Home')
+    res.render('Home');
+
 })
 
 //Pets Index Route

@@ -3,8 +3,6 @@ const Default = require('./Default');
 
 class Home extends React.Component {
     render() {
-
-
         return(
             <Default>
                     <div className="callout large primary">
