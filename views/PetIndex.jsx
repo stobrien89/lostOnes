@@ -1,14 +1,14 @@
 const React = require('react');
 const Default = require('./Default');
 
-class Index extends React.Component {
+class petIndex extends React.Component {
     render() {
 
         const {pets} = this.props;
         const elements = pets.map((pet, index) => {
             return (
                 <div className="cell medium-4">
-                    <div className="callout" data-equalizer-watch>
+                    <div className="callout text-center" data-equalizer-watch>
                         <p><img src={pet.photos} alt="Picture of pet" className="thumbnail"/></p>
                         <p className="lead">{pet.name}</p>
                         <p className="subheader">About: {pet.description}</p>
@@ -39,4 +39,4 @@ class Index extends React.Component {
     }
 }
 
-module.exports = Index;
+module.exports = petIndex;

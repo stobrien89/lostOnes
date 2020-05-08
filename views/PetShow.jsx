@@ -22,7 +22,12 @@ class Show extends React.Component {
             <Default>
                 
             
-
+                <div className="callout large primary">
+                    <div className="text-center">
+                        <h1>Featured pets</h1>
+                        <h2 className="subheader">blah blah blah</h2>
+                    </div>
+                </div>
                 <div className="grid-container">
                     <div className="grid-x align-center grid-padding-x">
                         <div className="cell medium-8">

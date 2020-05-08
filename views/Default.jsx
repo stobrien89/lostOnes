@@ -17,7 +17,7 @@ class Default extends React.Component {
                 </head>
                 <body>
                     <header className="top-bar large white">
-                        <img src="/assets/logo.png" alt=""/>
+                        <img src="/assets/images/logo.png" alt=""/>
                         <nav className="top-bar-left">
                             <ul className="menu">
                                 <li><a href="/lostones">Home</a></li>
@@ -34,7 +34,20 @@ class Default extends React.Component {
                     </header>
                         {this.props.children}
                     <footer className="callout large primary footer">
-                        <nav></nav>
+                        <div className="grid-container">
+                            <div className="grid-x">
+                                <div className="cell medium-4">
+                                    <h5>LostOnes</h5>
+                                    <p>We do put stuff</p>    
+                                </div>                        
+                                <nav className="cell medium-4">
+                                    <h5>Links</h5>
+                                </nav>
+                                <nav className="cell medium-4">
+                                    <h5>Contact</h5>
+                                </nav>
+                            </div>
+                        </div>
                     </footer>
                     <script src="/js/vendor/jquery.js"></script>
                     <script src="/js/vendor/what-input.js"></script>

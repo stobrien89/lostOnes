@@ -7,8 +7,16 @@ class Edit extends React.Component {
 
         return ( 
             <Default>
+                
+                <div className="callout large primary">
+                    <div className="text-center">
+                        <h1>Featured pets</h1>
+                        <h2 className="subheader">blah blah blah</h2>
+                    </div>
+                </div>
                 <h1>Edit Heading</h1>
                 <div className="grid-container">
+                            <h1>Edit Heading</h1>
                             <form className="grid-x grid-padding-x grid-margin-x" action={`/pets/${_id}?_method=PUT`} method="POST">
                                   <div className="cell small-4">Name: <input type="text" name="name" defaultValue={name}/></div>
                                   <div className="cell small-4">Type: <select className="cell small-4" name="type" defaultValue={type}>
@@ -57,22 +65,22 @@ class Edit extends React.Component {
                                                         <input name="shots_current" type="radio" value="no"/><label htmlFor="no">No</label>
                                                 </fieldset>
                                 </div>
-                                <div className="cell medium-4">Does well with children: <fieldset name="children">
+                                <div className="cell medium-4 medium-text-center">Does well with children: <fieldset name="children">
                                                         <input name="children" type="radio" value="yes"/><label htmlFor="yes">Yes</label>
                                                         <input name="children" type="radio" value="no"/><label htmlFor="no">No</label>
                                                     </fieldset>
                                 </div>
-                                <div className="cell medium-4">Does well with dogs: <fieldset name="dogs">
+                                <div className="cell medium-4 medium-text-center">Does well with dogs: <fieldset name="dogs">
                                                         <input name="dogs" type="radio" value="yes"/><label htmlFor="yes">Yes</label>
                                                         <input name="dogs" type="radio" value="no"/><label htmlFor="no">No</label>
                                                     </fieldset>
                                 </div>
-                                <div className="cell medium-4">Does well with cats: <fieldset name="cats">
+                                <div className="cell medium-4 medium-text-center">Does well with cats: <fieldset name="cats">
                                                         <input name="cats" type="radio" value="yes"/><label htmlFor="yes">Yes</label>
                                                         <input name="cats" type="radio" value="no"/><label htmlFor="no">No</label>
                                                     </fieldset>
                                 </div>
-                                <div className="cell large-6 text-right ">
+                                <div className="cell large-6 medium-text-right">
                                     <input className="button large primary" type="submit" value="Add Pet"/>
                                 </div>
                                 <div className="cell large-6 text-left">

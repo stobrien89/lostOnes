@@ -4,14 +4,12 @@ const Default = require('./Default');
 class Home extends React.Component {
     render() {
 
-        const userName = this.props.username;
 
         return(
             <Default>
-                {userName}
                     <div className="callout large primary">
                         <div className="text-center">
-                            <h1>Featured pets</h1>
+                            <h1>Blah Blah Blah</h1>
                             <h2 className="subheader">blah blah blah</h2>
                         </div>
                     </div>
@@ -25,22 +23,22 @@ class Home extends React.Component {
                             <ul className="orbit-container">
                                 <li className="is-active orbit-slide">
                                     <figure className="orbit-figure">
-                                    <img className="orbit-image" src="/assets/orbit1.jpg" alt="Space"/>
+                                    <img className="orbit-image" src="/assets//images/orbit1.jpg" alt="Space"/>
                                     </figure>
                                 </li>
                                 <li className="orbit-slide">
                                     <figure className="orbit-figure">
-                                    <img className="orbit-image" src="/assets/orbit4.jpg" alt="Space"/>
+                                    <img className="orbit-image" src="/assets/images/orbit4.jpg" alt="Space"/>
                                 </figure>
                                 </li>
                                 <li className="orbit-slide">
                                     <figure className="orbit-figure">
-                                    <img className="orbit-image" src="/assets/orbit3.jpg" alt="Space"/>
+                                    <img className="orbit-image" src="/assets/images/orbit3.jpg" alt="Space"/>
                                     </figure>
                                 </li>
                                 <li className="orbit-slide">
                                     <figure className="orbit-figure">
-                                    <img className="orbit-image" src="/assets/orbit2.jpg" alt="Space"/>
+                                    <img className="orbit-image" src="/assets/images/orbit2.jpg" alt="Space"/>
                                     </figure>
                                 </li>
                             </ul>

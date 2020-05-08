@@ -16,20 +16,20 @@ passportConfig = require('./config/passport.js');
 
 //Environment/port
 const port = process.env.PORT || 3000;
-mongoConnectionString = process.env.MONGODB_URL || 'mongodb://localhost/passport-authentication'
+mongoConnectionString = process.env.MONGODB_URL || 'mongodb://localhost:27017/lostones', {useNewUrlParser: true, useUnifiedTopology: true};
 
 
-//DB DEPENDENCIES
+
 
 
 //MONGOOSE CONNECTION
-mongoose.connect('mongodb://localhost:27017/lostones', {useNewUrlParser: true, useUnifiedTopology: true});
-mongoose.connection.once('open', () => {
-    console.log('connected to mongo');
-});
+// mongoose.connect('mongodb://localhost:27017/lostones', {useNewUrlParser: true, useUnifiedTopology: true});
+// mongoose.connection.once('open', () => {
+//     console.log('connected to mongo');
+// });
 
 mongoose.connect(mongoConnectionString, (err) => {
-    console.log(err || "Connected to MongoDB (passport-authentication)")
+    console.log(err || "Connected to MongoDB (lostones)");
 })
 
 //Stores session information as a 'sessions' collection in Mongo
@@ -60,7 +60,7 @@ app.use((req, res, next) => {
     next();
 })
 app.use(express.static('public'));
-// app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({extended: false}))
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 app.use(methodOverride('_method'));

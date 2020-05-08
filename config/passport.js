@@ -1,6 +1,7 @@
 const passport = require('passport');
 const localStrategy = require('passport-local').Strategy;
 const User = require('../models/users');
+const bcrypt = require('bcrypt');
 
 
 //Creates unique session out of user id
@@ -48,7 +49,7 @@ passport.use('local-login', new localStrategy({
 	User.findOne({email: email}, (err, user) => {
 		if(err) return done(err)
 		if(!user) return done(null, false, req.flash('loginMessage', 'No user found...'))
-		if(!user.validPassword(password)) return done(null, false, req.flash('loginMessage', 'Wrong Password.'))
+		if(!bcrypt.compareSync(password, user.password)) return done(null, false, req.flash('loginMessage', 'Wrong Password.'))
 		return done(null, user)
 	})
 }))

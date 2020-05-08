@@ -7,6 +7,12 @@ class UserLogin extends React.Component {
         
         return (
             <Default>
+                <div className="callout large primary">
+                    <div className="text-center">
+                        <h1>Featured pets</h1>
+                        <h2 className="subheader">blah blah blah</h2>
+                    </div>
+                </div>
                 <div className="grid-container">
                     <form action="/lostones/login" method="POST">
                         <h1>Log In</h1>
