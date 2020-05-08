@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
+const session = require('express-session');
+
 const port = 3000;
 
 //DB DEPENDENCIES
@@ -14,6 +16,7 @@ app.use(express.urlencoded({extended: false}));
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 app.use(methodOverride('_method'));
+app.use(session({secret: `Shhh it's a secret`, resave: false, saveUninitialized: false}))
 
 
 //MONGOOSE CONNECTION
@@ -43,3 +46,4 @@ app.use('/lostones', UserController);
 app.listen(port, () => {
     console.log(`listening on port ${port}`)
 });
+

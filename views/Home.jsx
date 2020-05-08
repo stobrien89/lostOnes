@@ -4,8 +4,11 @@ const Default = require('./Default');
 class Home extends React.Component {
     render() {
 
+        const userName = this.props.username;
+
         return(
             <Default>
+                {userName}
                     <div className="callout large primary">
                         <div className="text-center">
                             <h1>Featured pets</h1>
@@ -16,7 +19,7 @@ class Home extends React.Component {
                     <div className="orbit" role="region" aria-label="Sample pet images" data-orbit data-resize="lv5p5y-orbit" id="lv5p5y-orbit" data-e="eabujr-e" data-events="resize">
                         <div className="orbit-wrapper">
                             <div className="orbit-controls">
-                                <button className="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+                                <button className="orbit-previous"><span class="show-for-sr">Previous Slide</span>s</button>
                                 <button className="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
                             </div>
                             <ul className="orbit-container">

@@ -13,8 +13,9 @@ router.get('/', (req, res) => {
 
 //Pets Index Route
 router.get('/pets', (req, res) => {
+    console.log(req.session);
     Pets.find({}, (err, allPets) => {
-        err ? console.log(err) : console.log(allPets)
+        err ? console.log(err) : null;
         res.render('PetIndex', {pets: allPets});
     })
 });
