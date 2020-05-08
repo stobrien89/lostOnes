@@ -21,7 +21,7 @@ class petIndex extends React.Component {
 
 
         return (
-            <Default>
+            <Default user={this.props.loggedIn}>
                 <div className="callout large primary">
                     <div className="text-center">
                         <h1>Featured pets</h1>

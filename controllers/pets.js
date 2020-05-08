@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const app = express();
+
 
 // Link to DB const Pets 
 const Pets = require('../models/pets');
@@ -8,36 +10,32 @@ const Pets = require('../models/pets');
 
 //Landing page
 router.get('/', (req, res) => {
-    res.render('Home');
-
+    req.app.locals.loggedIn ? res.render('Home', {loggedIn: req.app.locals.loggedIn}) : res.render('Home');
 })
 
 //Pets Index Route
 router.get('/pets', (req, res) => {
-    console.log(req.session);
     Pets.find({}, (err, allPets) => {
-        err ? console.log(err) : null;
-        res.render('PetIndex', {pets: allPets});
+        req.app.locals.loggedIn ? res.render('PetIndex', {loggedIn: req.app.locals.loggedIn, pets: allPets}) : res.render('PetIndex', {pets: allPets});
     })
 });
 
 //New Route
 router.get('/pets/new', (req, res) => {
-    res.render('NewPet');
+    req.app.locals.loggedIn ? res.render('NewPet', {loggedIn: req.app.locals.loggedIn}) : res.render('PetIndex');
 });
 
 //Show Route
 router.get('/pets/:id', (req, res) => {
     Pets.findById(req.params.id, (err, foundPet) => {
-        err ? console.log(err) : console.log(foundPet);
-        res.render('PetShow', {pet: foundPet})
+        req.app.locals.loggedIn ? res.render('PetShow', {loggedIn: req.app.locals.loggedIn, pet: foundPet}) : res.render('PetShow', {pet: foundPet});
     })
 });
 
 //Edit Route
 router.get('/pets/:id/edit', (req, res) => {
     Pets.findById(req.params.id, (err, pet) => {
-        res.render('PetEdit', {pet})
+        req.app.locals.loggedIn ? res.render('PetEdit', {loggedIn: req.app.locals.loggedIn, pet}) : res.render('PetEdit', {pet});
     })
 })
 

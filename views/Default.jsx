@@ -3,7 +3,6 @@ const React = require('react');
 class Default extends React.Component {
     render() {
 
-
         return (
             <html className="no-js" lang="en">
                 <head>
@@ -26,9 +25,9 @@ class Default extends React.Component {
                         </nav>
                         <nav className="top-bar-right">
                             <ul className="menu">
-                                <li href="#"><a href="/lostones/login">Log In</a></li>
+                                {this.props.user ? <li><a href="/lostones/logout">Log Out</a></li> : <li href="#"><a href="/lostones/login">Log In</a></li>}
                                 <li><a href="/lostones/register">Create A New Account</a></li>
-                                <li><a href="/lostones/logout">Log Out</a></li>
+                                {/* <li><a href="/lostones/logout">Log Out</a></li> */}
                             </ul>
                         </nav>
                     </header>

@@ -7,7 +7,7 @@ class NewUser extends React.Component {
         const {message} = this.props;
 
         return (
-            <Default>
+            <Default user={this.props.loggedIn}>
                 <div className="callout large primary">
                     <div className="text-center">
                         <h1>Featured pets</h1>

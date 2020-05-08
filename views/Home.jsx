@@ -4,7 +4,7 @@ const Default = require('./Default');
 class Home extends React.Component {
     render() {
         return(
-            <Default>
+            <Default user={this.props.loggedIn}>
                     <div className="callout large primary">
                         <div className="text-center">
                             <h1>Blah Blah Blah</h1>

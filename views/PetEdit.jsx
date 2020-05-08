@@ -6,7 +6,7 @@ class Edit extends React.Component {
         let {_id, name, description, type, photos, breeds, colors, age, sex, size, spayedOrNeutered, house_trained, special_needs, shots_current, children, dogs, cats} = this.props.pet;
 
         return ( 
-            <Default>
+            <Default user={this.props.loggedIn}>
                 
                 <div className="callout large primary">
                     <div className="text-center">

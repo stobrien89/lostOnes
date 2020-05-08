@@ -11,7 +11,7 @@ const Users = require('../models/users')
 
 ///Registration Route
 router.get('/register', (req, res) => {
-    res.render('NewUser', {message: req.flash('signupMessage')});
+    req.app.locals.loggedIn ? res.render('NewUser', {loggedIn: req.app.locals.loggedIn, message: req.flash('signupMessage')}) : res.render('NewUser', {message: req.flash('signupMessage')});
 })
 
 //Login route

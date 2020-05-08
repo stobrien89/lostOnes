@@ -19,7 +19,7 @@ class Show extends React.Component {
         console.log(Object.keys(pet));
 
         return (
-            <Default>
+            <Default user={this.props.loggedIn}>
                 
             
                 <div className="callout large primary">
