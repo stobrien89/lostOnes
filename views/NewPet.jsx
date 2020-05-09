@@ -7,10 +7,9 @@ class New extends React.Component {
 
         return (
             <Default user={this.props.loggedIn}>
-                <div className="callout large primary">
+                <div className="callout large primary white">
                     <div className="text-center">
-                        <h1>Featured pets</h1>
-                        <h2 className="subheader">blah blah blah</h2>
+                        <h1><em>For Organizations Only</em></h1>
                     </div>
                 </div>
                 <div className="grid-container">

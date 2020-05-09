@@ -4,7 +4,8 @@ const passport = require('passport');
 
 
 //Linking users DB
-const Users = require('../models/users')
+const Users = require('../models/users');
+const Pets = require('../models/pets');
 
 
 //Presentational Routes
@@ -26,6 +27,18 @@ router.get('/logout' , (req, res) => {
     res.redirect('/lostones')
 })
 
+//Favorite pets route
+router.get('/favorites', (req, res) => {
+    if (req.app.locals.loggedIn) {
+        Users.findOne({_id: req.session.passport.user}, (err, foundUser) => {
+            res.render('FavoriteIndex', {favoritePets: foundUser.favoritePets, loggedIn: req.app.locals.loggedIn})
+        })
+    }else {
+        res.redirect('/lostones/pets')
+    }
+})
+
+
 
 
 //Functional Routes: 
@@ -37,21 +50,6 @@ router.post('/login', passport.authenticate('local-login', {
     
 }))
 
-// router.post('/register', (req, res) => {
-//     Users.find({$or: [{email: req.body.email}]}, (err, foundUsers) => {
-//         if (foundUsers.some((item) => item.email === req.body.email)) {
-//             res.render('NewUser', {errorMessage: 'User already exists. Please try again'});
-//         }else {
-//             Users.create(req.body, (err, user) => {
-//                 err ? console.log(err) : console.log('user added');
-//                 req.session.username = req.body.emails;
-//                 req.session.logged = true;
-//                 res.redirect('/lostones')
-//             })
-//         }
-//     })
-    
-// })
 
 router.post('/register', passport.authenticate('local-signup', {
     successRedirect: '/lostones',
@@ -71,6 +69,32 @@ router.post('/register', passport.authenticate('local-signup', {
 
 //     })
 // })
+
+//Remove pet from favorites
+router.post('/favorites/:id', (req, res) => {
+    Users.updateOne({_id: req.session.passport.user}, {$pull: {'favoritePets': {_id : req.body.id}}}, (err, update) => {
+        err ? console.log(err) : res.redirect('/lostones/favorites');
+    })
+})
+
+//Adds Pet to favorites
+router.post('/pets/:id/favorite', (req, res) => {
+    Users.findOne({_id: req.session.passport.user}, (err, foundUser) => {
+        Pets.findOne({_id: req.params.id}, (err, foundPet) => {
+            foundUser.favoritePets.push(foundPet)
+            foundUser.save((err, info) => {
+                if (err) {
+                    console.log(err);
+                }else {
+                    req.flash('success', 'Added to favorites!')
+                    res.redirect(`/lostones/pets/${req.params.id}`);
+                }
+            });
+        })
+    })
+})
+
+
 
 const isLoggedIn = (req, res, next) => {
     if (req.isAuthenticated()) {

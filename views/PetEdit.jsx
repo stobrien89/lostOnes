@@ -8,16 +8,17 @@ class Edit extends React.Component {
         return ( 
             <Default user={this.props.loggedIn}>
                 
-                <div className="callout large primary">
+                <div className="callout large primary white">
                     <div className="text-center">
-                        <h1>Featured pets</h1>
-                        <h2 className="subheader">blah blah blah</h2>
+                        <h2>Did you know only <em>25 percent of pets in shelters</em> are adopted?</h2>
+                        <br/>
+                        <a href="#" className="button large primary learn-more">Make a difference.</a>
                     </div>
                 </div>
-                <h1>Edit Heading</h1>
                 <div className="grid-container">
-                            <h1>Edit Heading</h1>
-                            <form className="grid-x grid-padding-x grid-margin-x" action={`/pets/${_id}?_method=PUT`} method="POST">
+                            <h4 class="text-center"style={{color: 'rgb(138, 64, 151)'}}>Please complete the forms below</h4>
+                            <br/>
+                            <form className="grid-x grid-padding-x grid-margin-x" action={`/lostones/pets/${_id}?_method=PUT`} method="POST">
                                   <div className="cell small-4">Name: <input type="text" name="name" defaultValue={name}/></div>
                                   <div className="cell small-4">Type: <select className="cell small-4" name="type" defaultValue={type}>
                                             <option value="dog">Dog</option>
@@ -81,7 +82,7 @@ class Edit extends React.Component {
                                                     </fieldset>
                                 </div>
                                 <div className="cell large-6 medium-text-right">
-                                    <input className="button large primary" type="submit" value="Add Pet"/>
+                                    <input className="button large primary" type="submit" value="Update"/>
                                 </div>
                                 <div className="cell large-6 text-left">
                                     <a href={`/lostones/pets/${_id}`} className="button large warning">Cancel</a>

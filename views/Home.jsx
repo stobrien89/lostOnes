@@ -5,17 +5,18 @@ class Home extends React.Component {
     render() {
         return(
             <Default user={this.props.loggedIn}>
-                    <div className="callout large primary">
+                    <div className="callout large primary white">
                         <div className="text-center">
-                            <h1>Blah Blah Blah</h1>
-                            <h2 className="subheader">blah blah blah</h2>
+                            <h1><strong>Adopt a pet.</strong><br/><em>Save a life.</em></h1>
+                            <br/>
+                            <a href="/lostones/pets" className="button large primary learn-more align-left">Find your new best friend.</a>
                         </div>
                     </div>
                     <div className="grid-container">
                     <div className="orbit" role="region" aria-label="Sample pet images" data-orbit data-resize="lv5p5y-orbit" id="lv5p5y-orbit" data-e="eabujr-e" data-events="resize">
                         <div className="orbit-wrapper">
                             <div className="orbit-controls">
-                                <button className="orbit-previous"><span class="show-for-sr">Previous Slide</span>s</button>
+                                <button className="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
                                 <button className="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
                             </div>
                             <ul className="orbit-container">

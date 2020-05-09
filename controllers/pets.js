@@ -1,10 +1,17 @@
 const express = require('express');
+const Seed = require('../models/seed');
 const router = express.Router();
 const app = express();
 
 
 // Link to DB const Pets 
 const Pets = require('../models/pets');
+
+//Seed data for pets: 
+// Pets.create(Seed, (err, createdData) => {
+//     err ? console.log(err) : console.log('added data');
+// })
+
 
 ///PRESENTATIONAL ROUTES
 
@@ -22,13 +29,13 @@ router.get('/pets', (req, res) => {
 
 //New Route
 router.get('/pets/new', (req, res) => {
-    req.app.locals.loggedIn ? res.render('NewPet', {loggedIn: req.app.locals.loggedIn}) : res.render('PetIndex');
+    req.app.locals.loggedIn ? res.render('NewPet', {loggedIn: req.app.locals.loggedIn}) : res.render('NewPet');
 });
 
 //Show Route
 router.get('/pets/:id', (req, res) => {
     Pets.findById(req.params.id, (err, foundPet) => {
-        req.app.locals.loggedIn ? res.render('PetShow', {loggedIn: req.app.locals.loggedIn, pet: foundPet}) : res.render('PetShow', {pet: foundPet});
+        req.app.locals.loggedIn ? res.render('PetShow', {loggedIn: req.app.locals.loggedIn, pet: foundPet, message: req.flash('success')}) : res.render('PetShow', {pet: foundPet});
     })
 });
 

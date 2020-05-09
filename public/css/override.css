@@ -1,6 +1,10 @@
 /* * {
     border: 1px solid black;
 } */
+html, body{
+    min-height: 100% !important;
+    margin: 0;
+}
 
 .primary {
     background-color: rgb(33, 185, 155) !important;
@@ -14,14 +18,22 @@
     background-color: rgb(138, 64, 151) !important;
 }
 
-footer {
-    color: white !important;
-}
-
 ul {
     list-style: none;
 }
 
 .footer-link {
     color: white;
+}
+
+.white {
+    color: white !important;
+}
+
+i {
+    display: inline-block !important;
+}
+
+.learn-more {
+    border-radius : 30px;
 }

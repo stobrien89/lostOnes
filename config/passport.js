@@ -42,6 +42,7 @@ passport.use('local-signup', new localStrategy({
 }))
 
 //LOCAL SIGN IN
+//similar to account creation, but authenticates pre-existing user rather than creating new Mongo document
 passport.use('local-login', new localStrategy({
 	usernameField: 'email',
 	passwordField: 'password',

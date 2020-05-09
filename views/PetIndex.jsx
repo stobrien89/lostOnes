@@ -11,21 +11,22 @@ class petIndex extends React.Component {
                     <div className="callout text-center" data-equalizer-watch>
                         <p><img src={pet.photos} alt="Picture of pet" className="thumbnail"/></p>
                         <p className="lead">{pet.name}</p>
-                        <p className="subheader">About: {pet.description}</p>
-                        <p className="subheader">Age: {pet.age} years old</p>
+                        <p className="subheader"><strong>Breed:</strong> {pet.breeds}</p>
+                        <p className="subheader"><strong>Age:</strong> {pet.age} years old</p>
                         <a className="button primary" href={`http://localhost:3000/lostones/pets/${pet._id}`}>More Info</a>
                     </div>
                 </div>
             )
         })
 
-
         return (
             <Default user={this.props.loggedIn}>
-                <div className="callout large primary">
+                <div className="callout large primary white">
                     <div className="text-center">
-                        <h1>Featured pets</h1>
-                        <h2 className="subheader">blah blah blah</h2>
+                        <h1>Log in or sign up to save your favorites!<br/>
+                        <em>Don't have an account? </em></h1>
+                        <br/>
+                        <a href="/lostones/pets" className="button large primary learn-more align-left">Sign up now</a>
                     </div>
                 </div>
                 <article className="grid-container" data-equalizer>

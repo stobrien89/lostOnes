@@ -1,12 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const Favorites = require('./favorites');
 const bcrypt = require('bcrypt');
 
 const userSchema = new Schema ({
     email: String,
     password: String,
-    // favoritePets: [FavoritePets.schema]
+    favoritePets: {type: Array, unique: true}
 })
 
 //Generates hash for user password
@@ -14,7 +13,7 @@ userSchema.methods.generateHash = (password) => bcrypt.hashSync(password, bcrypt
 
 //returns boolean to indicate whether or not a user has provided correct info--EDIT: HAD TO SCRAP THIS:
   ///Was not passing correct user password
-  
+
 // userSchema.methods.validPassword = (password) => bcrypt.compareSync(password, this.password);
 
 
