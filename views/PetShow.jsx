@@ -24,7 +24,7 @@ class Show extends React.Component {
                             </div>
                             <hr/>
                             <br/>
-                            <img src={pet.photos} alt="picture of pet" className="thumbnail"/>
+                            <div className="grid-x align-center"><img src={pet.photos} alt="picture of pet" className="thumbnail"/></div>
                             <div className="grid-x align-center">
                                 <div className="large-12 medium-12 cell"><p><strong>Bio:</strong> {pet.description}</p></div>
                                     <div className="cell large-4 medium-4">

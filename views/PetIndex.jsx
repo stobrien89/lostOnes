@@ -9,7 +9,7 @@ class petIndex extends React.Component {
             return (
                 <div className="cell medium-4">
                     <div className="callout text-center" data-equalizer-watch>
-                        <p><img src={pet.photos} alt="Picture of pet" className="thumbnail"/></p>
+                        <div style={{overflow: 'hidden'}}><p><img src={pet.photos} alt="Picture of pet" className="thumbnail"/></p></div>
                         <p className="lead">{pet.name}</p>
                         <p className="subheader"><strong>Breed:</strong> {pet.breeds}</p>
                         <p className="subheader"><strong>Age:</strong> {pet.age} years old</p>

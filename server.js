@@ -18,11 +18,7 @@ passportConfig = require('./config/passport.js');
 const port = process.env.PORT || 3000;
 mongoConnectionString = process.env.MONGODB_URL || 'mongodb://localhost:27017/lostones', {useNewUrlParser: true, useUnifiedTopology: true};
 
-
-
-
-
-//MONGOOSE CONNECTION
+// OLD MONGOOSE CONNECTION
 // mongoose.connect('mongodb://localhost:27017/lostones', {useNewUrlParser: true, useUnifiedTopology: true});
 // mongoose.connection.once('open', () => {
 //     console.log('connected to mongo');
@@ -64,18 +60,6 @@ app.use(express.urlencoded({extended: false}))
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 app.use(methodOverride('_method'));
-
-
-
-
-// MONGOOSE ERROR/SUCCESS MESSAGES
-// Products.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
-// Products.on('connected', () => console.log('mongo connected: ', mongoURI));
-// Products.on('disconnected', () => console.log('mongo disconnected'));
-
-// Products.on( 'open' , ()=>{
-//     console.log('Connection made!');
-//   });
 
 
 //CONTROLLERS

@@ -78,6 +78,7 @@ class New extends React.Component {
                                                     </fieldset>
                                 </div>
                                 <div className="cell large-12 text-center"><input className="button large primary" type="submit" value="Add Pet"/></div>
+                                <br/>
                             </form>
                     </div>
             </Default>
