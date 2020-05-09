@@ -31,7 +31,7 @@ class NewUser extends React.Component {
 
                         <hr/>
 
-                        <p>By creating an account, you agree to our Terms & Privacy Policy</p>
+                        <input type="checkbox" id="privacy"></input><label htmlFor="privacy">By creating an account, you agree to our Terms & Privacy Policy</label>
                         <input class="button expanded primary" type="submit" value="Create New Account"/>
                     </form>
                 </div>

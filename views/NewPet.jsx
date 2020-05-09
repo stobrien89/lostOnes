@@ -13,7 +13,8 @@ class New extends React.Component {
                     </div>
                 </div>
                 <div className="grid-container">
-                            <h1>Add a new pet</h1>
+                            <h3 className="text-center" style={{color: 'rgb(138, 64, 151)'}}>Add a new pet</h3>
+                            <br/>
                             <form className="grid-x grid-padding-x grid-margin-x " action="/lostones/pets" method="POST">
                                   <div className="cell small-4">Name: <input type="text" name="name"/></div>
                                   <div className="cell small-4">Type: <select className="cell small-4" name="type">

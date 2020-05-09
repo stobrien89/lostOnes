@@ -23,8 +23,8 @@ class petIndex extends React.Component {
             <Default user={this.props.loggedIn}>
                 <div className="callout large primary white">
                     <div className="text-center">
-                        <h1>Log in or sign up to save your favorites!<br/>
-                        <em>Don't have an account? </em></h1>
+                        <h2>Log in or sign up to save your favorites!<br/>
+                        <em>Don't have an account? </em></h2>
                         <br/>
                         <a href="/lostones/pets" className="button large primary learn-more align-left">Sign up now</a>
                     </div>
