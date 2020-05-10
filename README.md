@@ -8,7 +8,7 @@ pushed back due to unforseen issues that came up during the development process.
 ## Planning/Design
 Because this was my first attempt at using Foundation css for styling, I avoided wireframes altogether due to not being sure if I'd be able to replicate exactly what I had in mind.  
 A good chunk of time was spent reviewing the Foundation documentation, along with experimenting with different elements/classes to better understand its behavior and how it differs from frameworks I've used previously.
-As far as functionality is concerned, I had a few ideas in mind,
+
 
 ## Technology
 All of the obvious stuff (js, mongoDB, etc.), with some additional middleware, as well as a configuration for user authentication.
