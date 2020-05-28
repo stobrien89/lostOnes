@@ -16,7 +16,7 @@ passportConfig = require('./config/passport.js');
 
 //Environment/port
 const port = process.env.PORT || 3000;
-mongoConnectionString = process.env.MONGODB_URL || 'mongodb://localhost:27017/lostones', {useNewUrlParser: true, useUnifiedTopology: true};
+mongoConnectionString = process.env.MONGODB_URI || 'mongodb://localhost:27017/lostones', {useNewUrlParser: true, useUnifiedTopology: true};
 
 // OLD MONGOOSE CONNECTION
 // mongoose.connect('mongodb://localhost:27017/lostones', {useNewUrlParser: true, useUnifiedTopology: true});

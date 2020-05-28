@@ -11,7 +11,7 @@ class Default extends React.Component {
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
                     <title>LostOnes</title>
-                    <link rel="shortcut icon" href="/assets/images/favicon.png"/>
+                    <link rel="shortcut icon" href="/assets/images/favicon."/>
                     <link rel="stylesheet" href="/css/foundation.css" />
                     <link rel="stylesheet" href="/css/override.css"/>
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.min.css"/>
