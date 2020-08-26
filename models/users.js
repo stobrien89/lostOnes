@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const userSchema = new Schema ({
     email: String,
     password: String,
-    favoritePets: {type: Array, unique: true}
+    
 })
 
 //Generates hash for user password
